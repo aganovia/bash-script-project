@@ -1,0 +1,3 @@
+// A bash script that changes the name of a file. If the destination
+// file exists, it creates a filename with a different version number.
+// Author: Amela Aganovic, Riley Hernandez
