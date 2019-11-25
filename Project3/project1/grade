@@ -11,13 +11,7 @@ elif [[ $filename != *.zip ]]; then
 	exit 1
 else
 	echo "$filename will be unzipped"
-	# unzip "$filename" -d /rawdata BROKEN
-	mkdir rawdata
-	cp "$filename" ./rawdata
-	cd ./rawdata
-	unzip "$filename"
-	rm "$filename"
-	cd ..
+	unzip "$filename" -d rawdata
 fi
 mkdir grading
 # Create sub-directory under grading for each student and name it
