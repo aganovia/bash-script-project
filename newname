@@ -1,0 +1,24 @@
+#  A bash script that changes the name of a file. If the destination
+#  file exists, it creates a filename with a different version number.
+#  Author: Amela Aganovic, Riley Hernandez
+
+if [ $# != 2 ]
+	then
+		echo "Invalid command line arguments"
+		exit 1
+fi
+if [ ! -f "$1" ]
+	then
+		echo "$1 is not a file"
+		exit 1
+fi
+seq=1
+fname=$2
+while [ -f "$fname" ]
+do
+	temp=$2.$seq
+	fname=$temp
+	let seq++
+done
+mv $1 $fname
+
