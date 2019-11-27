@@ -14,12 +14,25 @@ else
 	unzip "$filename" -d rawdata
 fi
 mkdir grading
-# Create sub-directory under grading for each student and name it
-# by the student's user name (that can be extracted from the added prefix
-# of a filename)
-# 
-# Remove the added prefix from each filename in the data directory
-# and place them into each student's subdirectory respectively
-# ex sub-directory edwardsj would have four files: cipher.c, LetFreq.txt,
-# makefile, and memo.txt. (note that the name of the file created by BlackBoard
-# is renamed as memo.txt!!!!)
+
+ls rawdata/ > zz
+
+while read line
+do
+	# DIRECTORIES FOR EACH STUDENT
+	student=$(echo $line | cut -d_ -f2)
+	if [ ! -d grading/$student ]; then
+		mkdir grading/$student
+	fi
+
+	# EACH STUDENT'S FILE
+	file=$(echo $line | cut -d_ -f5)
+	if [ "$file" = "" ]; then
+		file="memo.txt"
+	fi
+	
+	# PLACE SHORT FILE NAMES INTO STUDENT SUBDIRECTORIES (STILL NEED TO DO)
+	#longname=$line
+	#shortname=$file
+	#mv "$longname" /grading/$student/$shortname
+done < zz
