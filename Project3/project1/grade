@@ -1,0 +1,25 @@
+# A bash script that automatically sorts student data from Blackboard.
+# Author: Amela Aganovic, Riley Hernandez
+
+echo -n "Enter name of zip file: "
+read filename
+if [ ! -f "$filename" ]; then
+	echo "Not a file"
+	exit 1
+elif [[ $filename != *.zip ]]; then
+	echo "Not a zip file"
+	exit 1
+else
+	echo "$filename will be unzipped"
+	unzip "$filename" -d rawdata
+fi
+mkdir grading
+# Create sub-directory under grading for each student and name it
+# by the student's user name (that can be extracted from the added prefix
+# of a filename)
+# 
+# Remove the added prefix from each filename in the data directory
+# and place them into each student's subdirectory respectively
+# ex sub-directory edwardsj would have four files: cipher.c, LetFreq.txt,
+# makefile, and memo.txt. (note that the name of the file created by BlackBoard
+# is renamed as memo.txt!!!!)
