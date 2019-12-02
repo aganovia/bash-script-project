@@ -30,8 +30,16 @@ do
 	if [ "$file" = "" ]; then
 		file="memo.txt"
 	fi
-
-	# MOVE AND RENAME STUDENT FILES
 	mv rawdata/"$line" grading/$student/$file
+
+	# echo $file
+	# mv rawdata/$line grading/$student/$file
+	# mv rawdata/$line $file
+	# mv rawdata/$file grading/$student
+
+	# ATTEMPT 1
+	# cd ./rawdata
+	# mv "$line" "$file"
+	# mv "$file" grading/$student
 
 done < zz
