@@ -1,13 +1,8 @@
 # bash-script-project
 Project 3 for CIS241, Fall 2019.
 
-Part 1 (DONE; needs more testing):
-Write a Bash script called newname that renames a file.
-- takes two command line arguments ($newname a.txt b.txt)
-- if new file name already exists, loop through new file names by sequence number (b.txt.1, b.txt.2, etc) until file name is valid 
+Part 1:
+A Bash script called newname that renames a file. Takes two command line arguments (e.g. $newname a.txt b.txt). If the new file name already exists, loops through new file names by sequence number (e.g. b.txt.1, b.txt.2, etc.) until valid file name is generated.
 
-Part 2 (STARTED):
-Write a script that unzips downloaded files, renames files, and reorganizes files for each student in a course.
-- prompt the user for the name of the zip file and unzip it into a data directory under the project1 directory (should work for any zip file with files from any number of students)
-- create a directory under project1 called grading, and create sub-directories under it for each student by the student's username
-- idk the rest is in the description why am i typing this out
+Part 2:
+A Bash script that unzips downloaded files, renames the files, and organizes them by students in a course (represented by directories).
